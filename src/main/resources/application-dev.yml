@@ -1,22 +1,9 @@
 spring:
-  output:
-    ansi:
-      enabled: always
-  application:
-    name: sbb
-  profiles:
-    active: dev
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-        highlight_sql: true
-        use_sql_comments: true
-
-logging:
-  level:
-    org.hibernate.orm.jdbc.bind: trace
-    org.hibernate.orm.jdbc.extract: trace
+  thymeleaf:
+    cache: false
+    prefix: file:src/main/resources/templates/
+  datasource:
+    url: jdbc:h2:./db_dev;MODE=MySQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
